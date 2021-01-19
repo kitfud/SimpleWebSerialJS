@@ -10,8 +10,8 @@
 ## Usage
 
 * [General Infos](usage/general-infos.md)
-* [Arduino](usage/arduino.md)
-* [JavaScript](usage/javascript.md)
+* [Arduino Usage](usage/arduino.md)
+* [JavaScript Usage](usage/javascript.md)
 
 ## Examples
 

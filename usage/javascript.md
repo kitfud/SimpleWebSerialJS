@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript Usage
 
 ## Getting Super Powers
 
