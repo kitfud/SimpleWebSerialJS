@@ -20,4 +20,5 @@
 ---
 
 * [Troubleshooting](troubleshooting.md)
+* [Further reading](further-reading.md)
 

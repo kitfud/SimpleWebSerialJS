@@ -4,6 +4,10 @@ description: 'Connect your arduino with your web application, in seconds.'
 
 # Introduction
 
+## Why this library?
+
+The new [Web Serial API](https://wicg.github.io/serial/) is a great way to connect serial devices like the Arduino directly to your web application. It lets your website communicate with the real world, and opens up a lot of possibilities for web developers! However, working with it is cumbersome and very technical. You're left to deal with things like byte-arrays and parsing data. This library makes connecting your web application with an Arduino a breeze, and lets you get up and running in minutes.
+
 ## Basic Overview
 
 This code gives you a very short but concise idea, how the library works on both Arduino and web page.
@@ -61,9 +65,9 @@ void loop() {
 {% endtab %}
 {% endtabs %}
 
-## Why this library?
-
-The new [Web Serial API](https://wicg.github.io/serial/) is a great way to connect serial devices like the Arduino directly to your web application. However, working with it is cumbersome and very technical. You're left to deal with things like byte-arrays and parsing data. This library makes connecting your web application with an Arduino a breeze, and lets you get up and running in minutes.
+{% hint style="info" %}
+The Web Serial API is currently in a so-called origin trial. After the trial ends, it might get shipped with Chrome immediately, be briefly unavailable, or removed completely. There is no telling yet, so probably don't build your next start-up on it. For now, exploring possibilities is the main idea!
+{% endhint %}
 
 ## Who is this for?
 
