@@ -6,13 +6,13 @@ description: This project is work in progress!
 
 ![](.gitbook/assets/titelbild-v3.jpg)
 
-### What is this library?
+## What is this library?
 
 This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles tasks like setting up permissions, readers, writers and byte transformers, and offers web developers a familiar style of listening to and sending data.
 
 The idea is to make the Web Serial API available to as many developers as possible, especially ones who like to ideate and be creative, but don't necessarily have hardcore programming skills.
 
-## Short overview
+## Code Style Summary
 
 This code gives you a very short but concise idea, how the library works on both Arduino and web page.
 
@@ -20,9 +20,7 @@ This code gives you a very short but concise idea, how the library works on both
 {% tab title="JavaScript" %}
 ```javascript
 // Set up the serial connection
-let connection = new SimpleSerial({
-    requestAccessOnPageLoad: true,
-});
+let connection = new SimpleSerial();
 
 // React to incoming events
 connection.on('event-from-arduino', function(data) {
@@ -84,29 +82,4 @@ This library is for creative minds and developers who like to experiment and cre
 Do you know your way around web development? Basic concepts like HTML, JavaScript? Then you can use this without problems.
 
 Do you like experimenting with new web technologies, maybe learn a new thing or two? This library will give you an idea what's possible when we integrate websites with the real world.
-
-## Installation
-
-The installation is super simple and consists of three parts.
-
-1. Enabling the Web Serial
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
-
 
