@@ -4,18 +4,20 @@ description: 'Connect your arduino with your web application, in seconds.'
 
 # Introduction
 
-## Why this library?
+## What is this library?
 
-The new [Web Serial API](https://wicg.github.io/serial/) is a great way to connect serial devices like the Arduino directly to your web application. It lets your website communicate with the real world, and opens up a lot of possibilities for web developers! However, working with it is cumbersome and very technical. You're left to deal with things like byte-arrays and parsing data. This library makes connecting your web application with an Arduino a breeze, and lets you get up and running in minutes.
+This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles tasks like setting up permissions, readers, writers and byte transformers, and offers web developers a familiar style of listening to and sending data.
 
-## Basic Overview
+The idea is to make the Web Serial API available to as many developers as possible, especially ones who like to ideate and be creative, but don't necessarily have hardcore programming skills.
+
+## Short overview
 
 This code gives you a very short but concise idea, how the library works on both Arduino and web page.
 
 {% tabs %}
 {% tab title="JavaScript" %}
 ```javascript
-// Set up your connection
+// Set up the serial connection
 let connection = new SimpleSerial({
     requestAccessOnPageLoad: true,
 });
@@ -65,6 +67,10 @@ void loop() {
 {% endtab %}
 {% endtabs %}
 
+## Why this library?
+
+The new [Web Serial API](https://wicg.github.io/serial/) is a great way to connect serial devices like the Arduino directly to your web application. It lets your website communicate with the real world, and opens up a lot of possibilities for web developers! However, working with it is cumbersome and very technical. You're left to deal with things like byte-arrays and parsing data. This library makes connecting your web application with an Arduino a breeze, and lets you get up and running in minutes.
+
 {% hint style="info" %}
 The Web Serial API is currently in a so-called origin trial. After the trial ends, it might get shipped with Chrome immediately, be briefly unavailable, or removed completely. There is no telling yet, so probably don't build your next start-up on it. For now, exploring possibilities is the main idea!
 {% endhint %}
@@ -75,13 +81,13 @@ This library is for creative minds and developers who like to experiment and cre
 
 Do you know your way around web development? Basic concepts like HTML, JavaScript? Then you can use this without problems.
 
-Do you like experimenting with new web technologies, maybe learn a new thing or two? This library will give you an idea, how 
+Do you like experimenting with new web technologies, maybe learn a new thing or two? This library will give you an idea what's possible when we integrate websites with the real world.
 
-Are you an intermediate web developer who builds advanced things, using frameworks? You'll love this.
+## Installation
 
-Do you like the idea of broadening your horizon,
+The installation is super simple and consists of three parts.
 
-##  
+1. Enabling the Web Serial
 
 ```
 $ give me super-powers
