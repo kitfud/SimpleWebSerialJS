@@ -1,10 +1,8 @@
----
-description: 'Connect your arduino with your web application, in seconds.'
----
+# Introduction - WIP!
 
-# Introduction
+![](.gitbook/assets/titelbild-v1.jpg)
 
-## What is this library?
+### What is this library?
 
 This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles tasks like setting up permissions, readers, writers and byte transformers, and offers web developers a familiar style of listening to and sending data.
 
