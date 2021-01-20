@@ -4,7 +4,9 @@ description: This project is work in progress!
 
 # Introduction
 
-![](.gitbook/assets/titelbild-v3.jpg)
+## Connect an Arduino with your web application, in seconds.
+
+![](.gitbook/assets/titelbild-v4.jpg)
 
 ## What is this library?
 
@@ -14,7 +16,7 @@ The idea is to make the Web Serial API available to as many developers as possib
 
 ## Code Style Summary
 
-This code gives you a very short but concise idea, how the library works on both Arduino and web page.
+This code gives you a very brief idea, how the library works on both Arduino and web page.
 
 {% tabs %}
 {% tab title="JavaScript" %}
