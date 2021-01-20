@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction - WIP!](README.md)
+* [Introduction](README.md)
 
 ## Installation
 

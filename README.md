@@ -1,6 +1,10 @@
-# Introduction - WIP!
+---
+description: This project is work in progress!
+---
 
-![](.gitbook/assets/titelbild-v1.jpg)
+# Introduction
+
+![](.gitbook/assets/titelbild-v3.jpg)
 
 ### What is this library?
 
