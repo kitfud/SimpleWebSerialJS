@@ -8,7 +8,7 @@ Super basic knowledge of Arduino programming is assumed.
 
 Please make sure you've completed the [set-up for Arduino](../installation/arduino.md).
 
-In your setup routine, initialize serial communications with your PC. Remember to include the library!
+In your setup routine, initialize serial communications with your PC. Remember to include the library:
 
 ```c
 #include <SimpleWebSerial.h>;
@@ -52,7 +52,7 @@ void loop() {
 
 ### Sending events to the browser
 
-You can also send events to the browser, any valid JSON can be sent as parameter. This includes numbers, strings, arrays and objects:
+You can also send events to the browser, together with any valid JSON as parameter. This includes numbers, strings, arrays and objects:
 
 #### Numbers and strings
 
@@ -84,12 +84,12 @@ WebSerial.send("event-with-object", myObject);
 ```
 
 {% hint style="info" %}
-The serial protocol and arduino serial buffer are not made for high throughput. Every character you add to your keys reduces the number of times you can receive an event per second. Try to keep your object keys short!
+The serial protocol and arduino serial buffer are not made for high throughput. Every character you add to your keys and data reduces the number of times you can receive an event per second. Try to keep your object keys short and don't send unnecessary data!
 {% endhint %}
 
 ## Methods
 
-.check\(\)
+### .check\(\)
 
 **It is crucial that you call this method in your loop\(\) function.** This method checks if there is serial data to be parsed and delegates it to registered events. Example:
 
@@ -127,15 +127,75 @@ WebSerial.on("browser-event", [](JSONVar data) {
 
 
 
-### .send\(const char\* name, JSONVar data\)
+### .send\(eventname, data\)
 
-### .sendEvent\(const char\* name\)
+Send an event to the browser. First parameter is the event name, second any valid json that is sent to the callback function of the event on the web page. Example:
+
+```javascript
+WebSerial.send("darkmode", true); // Send event "darkmode" with payload true
+
+JSONVar obj;
+obj["pin"] = 1;
+obj["status"] = true;
+WebSerial.send("pin-status", obj); // Send event "pin-status" with obj as payload
+```
+
+### .sendEvent\(eventname\)
+
+If you just want to send an event without any payload, you can use this helper function. Example:
+
+```javascript
+WebSerial.sendEvent("motionSensor"); // Send event "motionSensor" without payload
+```
 
 ### .sendData\(JSONVar data\)
 
+If you want to send pure data, you can use this. This will omit the event name and can be listened to in the web application via .on\("data", callback\). Example:
+
+```javascript
+WebSerial.sendData(42); // Send "42" without any event name.
+```
+
 ### .listEvents\(\)
 
-### .warn\(const char\* message\)
+This function uses Serial.println to print a list of currently registered events on the Arduino. Example:
 
+```c
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
 
+void setup() {
+    Serial.begin(57600);
+    
+    WebSerial.on("first-event", doSomething);
+    WebSerial.on("another-event", doSomethingElse);
+    WebSerial.listEvents();
+}
+
+/* Prints: */
+
+// Listing registered events:
+// - first-event
+// - another-event
+```
+
+### .warn\(message\)
+
+This will display a warning in the browser's console. Use it for debugging purposes, or to warn if something bad has happened or is about to happen. Example:
+
+```c
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
+
+void setup() {
+    Serial.begin(57600);
+    
+    if(!analogRead(A0) > 1) {
+        WebSerial.warn("Initial read suggests something's wrong!");
+    }
+}
+
+// In browser console:
+// ⚠ [ARDUINO] Initial read suggests something's wrong!
+```
 
