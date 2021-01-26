@@ -1,7 +1,5 @@
 # Enabling the Web Serial API
 
-## Enabling the Web Serial API
-
 The Web Serial API is currently only available in Google Chrome and other chromium based browsers \(Edge, Opera\). This might change in the future, but for now using Google Chrome is the most reliable way to test your applications.
 
 As the Web Serial API is underoing origin trial until April 2021, you either need to enable a chrome flag to use the API, or get a token for the origin trial. Enabling the flag is done in 10 seconds and good if you just want to test things out for yourself. However, if you want other users to use your application online, you're better off registering for the origin trial. Else, every one of your users has to enable the flag as well. 
