@@ -8,11 +8,14 @@ Super basic knowledge of Arduino programming is assumed.
 
 Please make sure you've completed the [set-up for Arduino](../installation/arduino.md).
 
-In your setup routine, initialize serial communications with your PC:
+In your setup routine, initialize serial communications with your PC. Remember to include the library!
 
 ```c
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
+
 void setup() {
-    // 57600 is the default baud rate used in the library
+    // 57600 is the default baud rate used in the library.
     Serial.begin(57600);
 }
 ```
@@ -26,6 +29,9 @@ To make sure the library knows when there is new serial data available, call the
 Your code might now look like this:
 
 ```c
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
+
 void setup() {
     Serial.begin(57600);
     
@@ -54,33 +60,82 @@ You can also send events to the browser, any valid JSON can be sent as parameter
 WebSerial.send("event-with-string", "Hello there, browser");
 
 WebSerial.send("event-with-number", 123);
-
-WebSerial.send("event-with-array", [42, "Nice string"];
-
-WebSerial.send("event-with-object", { r: 255, g: 255, b: 255 });
 ```
 
-### Sending and Receiving Arrays and JSON
+#### Sending and Receiving Arrays and JSON
 
 To send arrays or JSON objects, use the following syntax:
 
 ```c
 // Arrays
 JSONVar myArray;
-myArray[0] = 1;
-myArray[1] = "42";
+myArray[0] = 42;
+myArray[1] = "Nice string";
 // ...
+WebSerial.send("event-with-array", myArray);
 
 // JSON
 JSONVar myObject;
-myObject["foo"] = "bar";
-myObject["key2"] = true;
+myObject["foo"] = 1;
+myObject["secondkey"] = true;
 myObject["nested"]["key"] = "hot stuff";
+// ...
+WebSerial.send("event-with-object", myObject);
 ```
 
 {% hint style="info" %}
-The serial protocol and arduino serial buffer are not made for high throughput. Every byte you add reduces the number of times you can receive an event per second. Try to keep your object keys short!
+The serial protocol and arduino serial buffer are not made for high throughput. Every character you add to your keys reduces the number of times you can receive an event per second. Try to keep your object keys short!
 {% endhint %}
+
+## Methods
+
+.check\(\)
+
+**It is crucial that you call this method in your loop\(\) function.** This method checks if there is serial data to be parsed and delegates it to registered events. Example:
+
+```c
+void loop() {
+    WebSerial.check();
+    // do other stuff
+}
+```
+
+### .on\(eventname, callback\)
+
+This function defines an event the library should listen to, and the callback that should be executed when the event happens. Please note that when programming for Arduino, there is a difference between `'` and `"`, and the latter should be used when defining event names. It's also a strong typed language, which means we have to specify the type of parameter we expect in our callback, a `JSONVar`. Example:
+
+```c
+WebSerial.on("browser-event", doSomething);
+
+// This is our function callback.
+// JSONVar is the type of parameter we expect and has to be explicitly specified.
+void doSomething(JSONVar parameter) {
+    // do something
+}
+```
+
+#### Arrow- / Lambda functions
+
+If you're a friend of arrow-functions, there is a similar construct in C++ you can use for a familar syntax:
+
+```c
+// The example from above, but with a lambda-function as callback, for brevity:
+WebSerial.on("browser-event", [](JSONVar data) {
+    // Do something
+});
+```
+
+
+
+### .send\(const char\* name, JSONVar data\)
+
+### .sendEvent\(const char\* name\)
+
+### .sendData\(JSONVar data\)
+
+### .listEvents\(\)
+
+### .warn\(const char\* message\)
 
 
 
