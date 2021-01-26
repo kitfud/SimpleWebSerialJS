@@ -125,7 +125,23 @@ WebSerial.on("browser-event", [](JSONVar data) {
 });
 ```
 
+#### .on\("data", function callback\)
 
+When sending pure data from the browser via .sendData, listen to it by listening to the "data" event. Example:
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```javascript
+connection.sendData(12345);
+```
+{% endtab %}
+
+{% tab title="Arduino" %}
+```c
+WebSerial.on("data", functionCallback);
+```
+{% endtab %}
+{% endtabs %}
 
 ### .send\(eventname, data\)
 
