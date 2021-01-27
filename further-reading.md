@@ -1,22 +1,25 @@
 ---
-description: A collection of links about the Web Serial API.
+description: >-
+  A collection of links for more information on various topics related to the
+  library.
 ---
 
 # Further reading
 
-### Fixed
+## Web Serial API
 
-* Removed humans, they weren't doing fine with animals.
+* [Specifications of the Web Serial API \(Technical\)](https://wicg.github.io/serial/)
+* [Serial API Explainer](https://github.com/WICG/serial/blob/gh-pages/EXPLAINER.md)
+* [Status tracker of the feature in Google Chrome](https://www.chromestatus.com/feature/6577673212002304)
+* [Primer on the API, suggested use cases and example](https://web.dev/serial/)
+* [Another primer and example of using the Web Serial API without this library](https://dev.to/unjavascripter/the-amazing-powers-of-the-web-web-serial-api-3ilc)
+* [Chrome Web Serial API example](https://googlechromelabs.github.io/serial-terminal/)
+* [Registration for the origin trial \(no later than April 7th 2021\)](https://developer.chrome.com/origintrials/#/registration/-8127167740055126015)
+* [Bug tracker for the Web Serial API feature in Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=884928)
 
-### Changed
+## Arduino related
 
-* Animals are now super cute, all of them.
-
-## 14.0.0 - 2042-10-06
-
-### Added
-
-* Introduced animals into the world, we believe they're going to be a neat addition.
+* [Getting started with Arduino](https://www.arduino.cc/en/Tutorial/HomePage)
 
 
 

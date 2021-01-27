@@ -3,7 +3,7 @@
 ## Basics
 
 {% hint style="info" %}
-Super basic knowledge of Arduino programming is assumed.
+Basic knowledge of Arduino programming is assumed.
 {% endhint %}
 
 Please make sure you've completed the [set-up for Arduino](../installation/arduino.md).

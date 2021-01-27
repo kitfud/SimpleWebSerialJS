@@ -1,5 +1,13 @@
 # Troubleshooting
 
+## List with keywords in no particular order or completeness
+
+* baud rate
+* event rate
+* used internal event names
+* flag enabled?
+* access element must exist when creating library instance
+
 ## Can I become who I want to be?
 
 That's a tough question but thankfully, our team is on it. Please bear with us while we're investigating.
