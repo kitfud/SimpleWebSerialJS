@@ -10,7 +10,7 @@ description: This project is work in progress!
 
 ## What is this library?
 
-This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles tasks like setting up permissions, readers, writers and byte transformers, and offers web developers a familiar style of listening to and sending data.
+This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles tasks like setting up permissions, readers, writers and byte transformers, and offers web developers a familiar, event-driven style of listening to and sending data.
 
 The idea is to make the Web Serial API available to as many developers as possible, especially ones who like to ideate and be creative, but don't necessarily have hardcore programming skills.
 
