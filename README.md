@@ -74,7 +74,9 @@ void loop() {
 The new [Web Serial API](https://wicg.github.io/serial/) is a great way to connect serial devices like the Arduino directly to your web application. It lets your website communicate with the real world, and opens up a lot of possibilities for web developers! However, working with it is cumbersome and very technical. You're left to deal with things like byte-arrays and parsing data. This library makes connecting your web application with an Arduino a breeze, and lets you get up and running in minutes.
 
 {% hint style="info" %}
-The Web Serial API is currently in a so-called origin trial. After the trial ends, it might get shipped with Chrome immediately, be briefly unavailable, or removed completely. There is no telling yet, so probably don't build your next start-up on it. For now, exploring possibilities is the main idea!
+The Web Serial API is currently \(January 2021\) in a so-called origin trial. After the trial ends, it might get shipped with Chrome immediately, be briefly unavailable, or removed completely. There is no telling yet, so probably don't build your next start-up on it. For now, exploring possibilities is the main idea!
+
+**UPDATE:** The feature will be shipped and enabled by default in Chrome 89!🥳
 {% endhint %}
 
 ## Who is this for?
