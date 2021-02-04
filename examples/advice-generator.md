@@ -2,7 +2,7 @@
 description: Working with APIs.
 ---
 
-# Advice Generator
+# Working with an API
 
 ## Getting Super Powers
 

@@ -24,7 +24,8 @@
 * [Control Background Color](examples/control-background-color.md)
 * [Control RGB LED with sliders](examples/control-rgb-led-with-sliders.md)
 * [Home in on points](examples/home-in-on-points.md)
-* [Advice Generator](examples/advice-generator.md)
+* [Object Model Viewer](examples/object-model-viewer.md)
+* [Working with an API](examples/advice-generator.md)
 * [Ping Test - Lambda function](examples/ping-test-lambda-function.md)
 
 ---
