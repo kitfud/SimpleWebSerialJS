@@ -76,7 +76,7 @@ The new [Web Serial API](https://wicg.github.io/serial/) is a great way to conne
 {% hint style="info" %}
 The Web Serial API is currently \(January 2021\) in a so-called origin trial. After the trial ends, it might get shipped with Chrome immediately, be briefly unavailable, or removed completely. There is no telling yet, so probably don't build your next start-up on it. For now, exploring possibilities is the main idea!
 
-**UPDATE:** The feature will be shipped and enabled by default in Chrome 89!🥳
+**UPDATE:** The feature is shipped and enabled by default in Chrome 89!🥳
 {% endhint %}
 
 ## Who is this for?
