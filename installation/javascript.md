@@ -26,7 +26,11 @@ And include it in your project like so:
 <script lang="text/javascript" src="../node_modules/simple-web-serial/lib/SimpleSerial.js">
 ```
 
-{% hint style="info" %}
-Module bundling will be supported with a later build.
-{% endhint %}
+With a bundler like webpack:
+
+```bash
+import connect from "simple-serial";
+
+const connection = connect()
+```
 

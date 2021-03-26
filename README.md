@@ -22,7 +22,7 @@ This code gives you a very brief idea, how the library works on both Arduino and
 {% tab title="JavaScript" %}
 ```javascript
 // Set up the serial connection
-let connection = new SimpleSerial();
+let connection = SimpleSerial.connect();
 
 // React to incoming events
 connection.on('event-from-arduino', function(data) {
