@@ -6,10 +6,10 @@
 Basic knowledge of HTML and JavaScript is assumed.
 {% endhint %}
 
-To use the library, first create a new instance of it:
+To use the library, call its connect method:
 
 ```javascript
-const connection = new SimpleWebSerial();
+const connection = SimpleSerial.connect();
 ```
 
 ### Listening to events
