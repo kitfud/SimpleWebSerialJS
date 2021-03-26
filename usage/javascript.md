@@ -47,9 +47,9 @@ When creating a new SimpleWebSerial instance, it has a default set-up that works
 **Example:**
 
 ```javascript
-const conn  = new SimpleWebSerial(); // Default, out-of-the-box behavior
-const conn2 = new SimpleWebSerial(9600); // Connection with a lower baud rate
-const conn3 = new SimpleWebSerial({ // Connection with a custom constructor object
+const conn  = SimpleSerial.connect(); // Default, out-of-the-box behavior
+const conn2 = SimpleSerial.connect(9600); // Connection with a lower baud rate
+const conn3 = SimpleSerial.connect({ // Connection with a custom constructor object
     baudRate: 9600,
     requestAccessOnPageLoad: false,
 });
@@ -88,6 +88,9 @@ If set to true, will use console.log\(\) to log all outgoing serial data from th
 
 **parseStringsAsNumber: bool** _\(Default: true\)_  
 If set to true, will try to parse strings as numbers to avoid type errors. Example: Values from inputs like sliders or text inputs are strings. This setting will convert them into numbers so they can be used by the Arduino as such.
+
+**filters: array** _\(Default: \[\]\)_  
+The filters property allows you to filter available serial devices that are shown when requesting access to them. This can be used to write web applications for specific devices and prevent the user from connecting them to another device, preventing confusion.
 
 ### .on\(string eventName, function callback\)
 
