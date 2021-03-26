@@ -20,13 +20,13 @@ That's it! Either [set-up the Arduino Library](arduino.md) as well, or take a lo
 npm i simple-web-serial
 ```
 
-And include it in your project like so: 
+And include it in your project either by using a script tag:
 
 ```bash
-<script lang="text/javascript" src="../node_modules/simple-web-serial/lib/SimpleSerial.js">
+<script lang="text/javascript" src="../node_modules/simple-web-serial/dist/simple-serial.min.js">
 ```
 
-With a bundler like webpack:
+or with a bundler like webpack:
 
 ```bash
 import connect from "simple-serial";
