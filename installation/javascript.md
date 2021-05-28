@@ -4,6 +4,10 @@ description: How to set up the JavaScript part of the SimpleWebSerial library.
 
 # JavaScript
 
+{% hint style="info" %}
+The Web Serial API is currently \(2021\) only available in Chrome 89+ and Edge 89+. As of right now, no other browsers intend to implement the feature. If biggest possible browser support is important to your project, using the Web Serial API might be the wrong approach.
+{% endhint %}
+
 ## Via &lt;script&gt; tag
 
 This is the easiest method to get you started immediately. Just include the script tag inside the `<head>` of your document and you're good to go:
