@@ -1,16 +1,16 @@
 ---
-description: This project is work in progress!
+description: >-
+  SimpleWebSerial helps you to connect an Arduino with your web application, in
+  seconds.
 ---
 
 # Introduction
 
-{% hint style="info" %}
+![](.gitbook/assets/titelbild-v4.jpg)
+
+{% hint style="warning" %}
 This library uses the Web Serial API, which is currently \(2021\) only available in Chrome 89+ and Edge 89+. If biggest possible browser support is important to your project, using this library may be the wrong approach.
 {% endhint %}
-
-## Connect an Arduino with your web application, in seconds.
-
-![](.gitbook/assets/titelbild-v4.jpg)
 
 ## What is this library?
 
@@ -20,7 +20,7 @@ The idea is to make the Web Serial API available to as many developers as possib
 
 ## Code Style Summary
 
-This code gives you a very brief idea, how the library works on both Arduino and web page.
+This code gives you a brief idea how the library works on both Arduino and web page.
 
 {% tabs %}
 {% tab title="JavaScript" %}

@@ -4,7 +4,6 @@
 
 ## Installation
 
-* [Enabling the Web Serial API](installation/enabling-the-web-serial-api.md)
 * [JavaScript](installation/javascript.md)
 * [Arduino](installation/arduino.md)
 
@@ -32,5 +31,4 @@
 
 * [Troubleshooting](troubleshooting.md)
 * [Further reading](further-reading.md)
-* [Untitled](untitled.md)
 

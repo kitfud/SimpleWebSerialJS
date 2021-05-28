@@ -6,7 +6,7 @@
 Basic knowledge of HTML and JavaScript is assumed.
 {% endhint %}
 
-To use the library, call its connect method:
+To use the library, store an instance of it in a variable by calling its connect method:
 
 ```javascript
 const connection = SimpleSerial.connect();
@@ -40,7 +40,7 @@ That's the basics! There are a few more concepts, like waiting for the serial wr
 
 ## Methods
 
-### new SimpleWebSerial\(null \| number baudRate \| object constructorObject\)
+### connect\(null \| number baudRate \| object constructorObject\)
 
 When creating a new SimpleWebSerial instance, it has a default set-up that works out of the box. However, you can adjust this to your needs.
 
@@ -91,6 +91,10 @@ If set to true, will try to parse strings as numbers to avoid type errors. Examp
 
 **filters: array** _\(Default: \[\]\)_  
 The filters property allows you to filter available serial devices that are shown when requesting access to them. This can be used to write web applications for specific devices and prevent the user from connecting them to another device, preventing confusion.
+
+## Instance Methods
+
+These are methods that can be invoked on an instance of the library that has been initialized by calling SimpleSerial.connect\(\).
 
 ### .on\(string eventName, function callback\)
 
