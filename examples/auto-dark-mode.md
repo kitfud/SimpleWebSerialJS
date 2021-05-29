@@ -1,11 +1,12 @@
 ---
 description: >-
-  https://github.com/fmgrafikdesign/SimpleWebSerialJS/tree/main/examples/auto-dark-mode
+  Let your web application automatically enter a dark friendly mode when
+  environmental light decreases!
 ---
 
 # Auto Dark Mode
 
-Get the example at: [https://github.com/fmgrafikdesign/SimpleWebSerialJS/tree/main/examples/auto-dark-mode](https://github.com/fmgrafikdesign/SimpleWebSerialJS/tree/main/examples/auto-dark-mode)
+[Get the example](https://github.com/fmgrafikdesign/SimpleWebSerialJS/tree/main/examples/auto-dark-mode).
 
 ### Used Hardware:
 
