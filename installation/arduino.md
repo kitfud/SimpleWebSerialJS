@@ -4,6 +4,10 @@ description: Setting your Arduino up for Simple Web Serial.
 
 # Arduino
 
+## Installing the Arduino IDE
+
+If you haven't worked with an Arduino before, consider following the ["Getting Started" guide and install the Arduino Desktop IDE](https://www.arduino.cc/en/Guide). Getting your feet wet by looking at and tinkering with some of the examples provided by the Arduino team will go a long way to help you understand basics in Arduino programming.
+
 ## Installing the library
 
 ### Via Arduino IDE Library Manager

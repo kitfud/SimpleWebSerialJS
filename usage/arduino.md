@@ -24,9 +24,7 @@ void setup() {
 
 Define events you want to listen to in your code with the `on` method. `on`takes an event name as its first parameter and a function callback as its second.
 
-To make sure the library knows when there is new serial data available, call the `check()` method at the beginning of each `loop()`.
-
-Your code might now look like this:
+To make sure the library knows when there is new serial data available, call the `check()` method at the beginning of each `loop()` . Your code might look like this:
 
 ```c
 #include <SimpleWebSerial.h>;
@@ -91,7 +89,7 @@ The serial protocol and arduino serial buffer are not made for high throughput. 
 
 ### .check\(\)
 
-**It is crucial that you call this method in your loop\(\) function.** This method checks if there is serial data to be parsed and delegates it to registered events. Example:
+**It is crucial that you call this method in your loop\(\) function.** This method checks if there is serial data to be parsed and delegates it to registered events. Make sure to include it in your loop function like this:
 
 ```c
 void loop() {
@@ -102,7 +100,7 @@ void loop() {
 
 ### .on\(eventname, callback\)
 
-This function defines an event the library should listen to, and the callback that should be executed when the event happens. Please note that when programming for Arduino, there is a difference between `'` and `"`, and the latter should be used when defining event names. It's also a strong typed language, which means we have to specify the type of parameter we expect in our callback, a `JSONVar`. Example:
+This function defines an event the library should listen to, and the callback that should be executed when the event happens. Please note that when programming for Arduino, **there is a difference between `'` and `"`**, and the latter should be used when defining event names. It's also a strong typed language, which means we have to specify the type of parameter we expect in our callback, a `JSONVar`. Example:
 
 ```c
 WebSerial.on("browser-event", doSomething);
@@ -125,24 +123,6 @@ WebSerial.on("browser-event", [](JSONVar data) {
 });
 ```
 
-#### .on\("data", function callback\)
-
-When sending pure data from the browser via .sendData, listen to it by listening to the "data" event. Example:
-
-{% tabs %}
-{% tab title="JavaScript" %}
-```javascript
-connection.sendData(12345);
-```
-{% endtab %}
-
-{% tab title="Arduino" %}
-```c
-WebSerial.on("data", functionCallback);
-```
-{% endtab %}
-{% endtabs %}
-
 ### .send\(eventname, data\)
 
 Send an event to the browser. First parameter is the event name, second any valid json that is sent to the callback function of the event on the web page. Example:
@@ -160,17 +140,37 @@ WebSerial.send("pin-status", obj); // Send event "pin-status" with obj as payloa
 
 If you just want to send an event without any payload, you can use this helper function. Example:
 
+{% tabs %}
+{% tab title="Arduino" %}
 ```javascript
 WebSerial.sendEvent("motionSensor"); // Send event "motionSensor" without payload
 ```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```
+connection.on("motionSensor", functionCallback);
+```
+{% endtab %}
+{% endtabs %}
 
 ### .sendData\(JSONVar data\)
 
 If you want to send pure data, you can use this. This will omit the event name and can be listened to in the web application via .on\("data", callback\). Example:
 
+{% tabs %}
+{% tab title="Arduino" %}
 ```javascript
-WebSerial.sendData(42); // Send "42" without any event name.
+WebSerial.sendData(12345);
 ```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```c
+connection.on("data", functionCallback);
+```
+{% endtab %}
+{% endtabs %}
 
 ### .listEvents\(\)
 
@@ -195,6 +195,24 @@ void setup() {
 // - another-event
 ```
 
+### .log\(message\)
+
+This will log a message in the browser's console. Use it for debugging purposes. Example:
+
+```c
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
+
+void setup() {
+    Serial.begin(57600);
+    
+    WebSerial.log("Arduino has completed setup routine!");
+}
+
+// In browser console:
+// [ARDUINO] Initial read suggests something's wrong!
+```
+
 ### .warn\(message\)
 
 This will display a warning in the browser's console. Use it for debugging purposes, or to warn if something bad has happened or is about to happen. Example:
@@ -213,5 +231,25 @@ void setup() {
 
 // In browser console:
 // ⚠ [ARDUINO] Initial read suggests something's wrong!
+```
+
+### .error\(message\)
+
+This will display an error in the browser's console. Use for debugging purposes. Example:
+
+```c
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
+
+void setup() {
+    Serial.begin(57600);
+    
+    if(!analogRead(A0) < 1023) {
+        WebSerial.error("Necessary hardware conditions are not met!");
+    }
+}
+
+// In browser console:
+// ❌ [ARDUINO] Necessary hardware conditions are not met!
 ```
 

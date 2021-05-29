@@ -42,7 +42,7 @@ That's the basics! There are a few more concepts, like waiting for the serial wr
 
 ### connect\(null \| number baudRate \| object constructorObject\)
 
-When creating a new SimpleWebSerial instance, it has a default set-up that works out of the box. However, you can adjust this to your needs.
+When creating a SimpleSerial instance, it has a default set-up that works out of the box. However, you can adjust this to your needs.
 
 **Example:**
 
