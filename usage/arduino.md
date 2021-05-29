@@ -81,6 +81,24 @@ myObject["nested"]["key"] = "hot stuff";
 WebSerial.send("event-with-object", myObject);
 ```
 
+#### Limiting sent data
+
+If you're constantly sending data, e.g. in your loop\(\) method, make sure to use short delays as to not overload the serial connection. A short delay of 10 or even 5 milliseconds will be enough most of the time:
+
+```cpp
+#include <SimpleWebSerial.h>;
+SimpleWebSerial WebSerial;
+
+void setup() {
+  Serial.begin(57600);
+}
+
+void loop() {
+  WebSerial.send("value", analogRead(A0));
+  delay(10); // Wait 10 milliseconds between each event
+}
+```
+
 {% hint style="info" %}
 The serial protocol and arduino serial buffer are not made for high throughput. Every character you add to your keys and data reduces the number of times you can receive an event per second. Try to keep your object keys short and don't send unnecessary data!
 {% endhint %}
