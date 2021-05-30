@@ -9,7 +9,6 @@
 
 ## Usage
 
-* [General Infos](usage/general-infos.md)
 * [JavaScript Usage](usage/javascript.md)
 * [Arduino Usage](usage/arduino.md)
 

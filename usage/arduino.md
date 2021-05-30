@@ -8,14 +8,14 @@ Basic knowledge of Arduino programming is assumed.
 
 Please make sure you've completed the [set-up for Arduino](../installation/arduino.md).
 
-In your setup routine, initialize serial communications with your PC. Remember to include the library:
+In your set-up routine, initialize serial communication with your PC. Remember to include the library:
 
 ```c
 #include <SimpleWebSerial.h>;
 SimpleWebSerial WebSerial;
 
 void setup() {
-    // 57600 is the default baud rate used in the library.
+    // 57600 is the default baud rate used in the JavaScript library.
     Serial.begin(57600);
 }
 ```
@@ -37,7 +37,7 @@ void setup() {
 }
 
 // This is our function callback.
-// JSONVar is the type of parameter we expect and has to be specified as JSONVar.
+// JSONVar is the type of parameter we expect and has to be explicitly specified.
 void doSomething(JSONVar parameter) {
     // Do something with parameter
 }
@@ -50,7 +50,7 @@ void loop() {
 
 ### Sending events to the browser
 
-You can also send events to the browser, together with any valid JSON as parameter. This includes numbers, strings, arrays and objects:
+You can send events to the browser, together with any valid JSON as parameter. This includes numbers, strings, arrays and objects:
 
 #### Numbers and strings
 
@@ -83,7 +83,7 @@ WebSerial.send("event-with-object", myObject);
 
 #### Limiting sent data
 
-If you're constantly sending data, e.g. in your loop\(\) method, make sure to use short delays as to not overload the serial connection. A short delay of 10 or even 5 milliseconds will be enough most of the time:
+In order to prevent overflows and instability, make sure to use short delays if you're constantly sending data, e.g. in your loop function. A short delay of 10 or even 5 milliseconds will be enough most of the time:
 
 ```cpp
 #include <SimpleWebSerial.h>;
