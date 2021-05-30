@@ -17,7 +17,8 @@ The easiest way to get the library is to install it from the Arduino library man
 1. Open the Arduino IDE
 2. Hit CTRL + Shift + I \(Windows\) or ⌘ + Shift + I \(Apple\) to open the _Library Manager_
 3. Enter "Simple Web Serial" in the search field
-4. _Simple Web Serial_ should be the first result. Click on it and hit the install button. That's it!
+4. _Simple Web Serial_ should be the first result. Click on it and hit the install button. 
+5. When prompted to install additional dependencies, select "Install All". That's it!
 
 {% hint style="info" %}
 This will also automatically install the Arduino\_JSON library, as it's a dependency.
