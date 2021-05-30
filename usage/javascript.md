@@ -16,7 +16,7 @@ const connection = SimpleSerial.connect();
 
 Define events you want to listen to with the `on` method. `on`takes an event name as its first parameter and a callback as its second:
 
-```bash
+```javascript
 connection.on('event-from-arduino', function(data) {
     console.log('Received event "event-from-arduino" with parameter ' + data)
 });
@@ -26,7 +26,7 @@ connection.on('event-from-arduino', function(data) {
 
 You can also send events to the Arduino, any valid JSON can be sent as parameter. This includes numbers, strings, arrays and objects:
 
-```bash
+```javascript
 connection.send('event-with-string', "Hello there, Arduino");
 
 connection.send('event-with-number', 123);

@@ -14,13 +14,13 @@ This library uses the Web Serial API, which is currently \(2021\) only available
 
 ## What is this library?
 
-This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles tasks like setting up permissions, readers, writers and byte transformers, and offers web developers a familiar, event-driven style of listening to and sending data.
+This library is an effort to drastically simplify working with the [Web Serial API](https://wicg.github.io/serial/). It handles repetitive setup steps and offers web developers a familiar, event-driven style of listening to and sending data.
 
-The idea is to make the Web Serial API available to as many developers as possible, especially ones who like to ideate and be creative, but don't necessarily have hardcore programming skills.
+The idea is to make using the Web Serial API as easy as possible, so as many developers as possible can use it, especially ones who like to ideate and be creative, but don't necessarily have hardcore programming skills.
 
 ## Code Style Summary
 
-This code gives you a brief idea how the library works on both Arduino and web page.
+This library employs an event-driven code style. You can register event listeners with callback functions, and send events to the other device. Here's a brief idea how working with the library looks like in the browser and on the Arduino:
 
 {% tabs %}
 {% tab title="JavaScript" %}

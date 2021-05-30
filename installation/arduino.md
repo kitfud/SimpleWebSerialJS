@@ -15,7 +15,7 @@ If you haven't worked with an Arduino before, consider following the ["Getting S
 The easiest way to get the library is to install it from the Arduino library manager:
 
 1. Open the Arduino IDE
-2. Hit CTRL + Shift + I \(Shortcut for _Manage Libraries_\) 
+2. Hit CTRL + Shift + I \(Windows\) or ⌘ + Shift + I \(Apple\) to open the _Library Manager_
 3. Enter "Simple Web Serial" in the search field
 4. _Simple Web Serial_ should be the first result. Click on it and hit the install button. That's it!
 
