@@ -22,7 +22,7 @@ void setup() {
 
 ### Listening to events
 
-Define events you want to listen to in your code with the `on` method. `on`takes an event name as its first parameter and a function callback as its second.
+Define events you want to listen to in your code with the `on` method. `on`takes an event name as its first parameter and a callback function as its second. The callback function receives the payload of the event as its parameter.
 
 To make sure the library knows when there is new serial data available, call the `check()` method at the beginning of each `loop()` . Your code might look like this:
 
@@ -33,11 +33,12 @@ SimpleWebSerial WebSerial;
 void setup() {
     Serial.begin(57600);
     
+    // Defining an event listener with event name and callback function.
     WebSerial.on("browser-event", doSomething);
 }
 
-// This is our function callback.
-// JSONVar is the type of parameter we expect and has to be explicitly specified.
+// This is our callback function.
+// JSONVar is the type of the parameter and has to be explicitly specified.
 void doSomething(JSONVar parameter) {
     // Do something with parameter
 }
@@ -48,9 +49,44 @@ void loop() {
 }
 ```
 
+You can receive any valid JSON as a parameter in your callback function. Make sure to always explicitly type the parameter of your callback function as `JSONVar`:
+
+```c
+void callbackWithBool(JSONVar some_bool) {
+    digitalWrite(0, some_bool);
+}
+
+void callbackWithNumberParameter(JSONVar some_number) {
+    analogWrite(0, some_number);
+}
+
+void callbackWithStringParameter(JSONVar some_string) {
+    JSONVar copy_string = some_string;
+}
+
+void callbackWithArray(JSONVar some_array) {
+    digitalWrite(0, some_array[0]);
+    analogWrite(1, some_array[1]);
+}
+
+void callbackWithObject(JSONVar some_object) {
+    digitalWrite(0, some_object["first_key"];
+    analogWrite(1, some_object["second_key"];
+}
+```
+
+If you are a fan of arrow- / lambda-functions, you can use a similar construct on your Arduino:
+
+```c
+// An event listener, but with a lambda-function as callback, for brevity:
+WebSerial.on("browser-event", [](JSONVar data) {
+    // Do something
+});
+```
+
 ### Sending events to the browser
 
-You can send events to the browser, together with any valid JSON as parameter. This includes numbers, strings, arrays and objects:
+You can send arbitrarily named events to the browser, together with any valid JSON as parameter. This includes numbers, strings, arrays and objects:
 
 #### Numbers and strings
 
@@ -60,7 +96,7 @@ WebSerial.send("event-with-string", "Hello there, browser");
 WebSerial.send("event-with-number", 123);
 ```
 
-#### Sending and Receiving Arrays and JSON
+#### Sending Arrays and JSON
 
 To send arrays or JSON objects, use the following syntax:
 
@@ -118,13 +154,13 @@ void loop() {
 
 ### .on\(eventname, callback\)
 
-This function defines an event the library should listen to, and the callback that should be executed when the event happens. Please note that when programming for Arduino, **there is a difference between `'` and `"`**, and the latter should be used when defining event names. It's also a strong typed language, which means we have to specify the type of parameter we expect in our callback, a `JSONVar`. Example:
+This function defines an event the library should listen to, and the callback that should be executed when the event happens. Please note that when programming for Arduino, **there is a difference between `'` and `"`**, and the latter should be used when defining event names. It's also a strong typed language, which means we have to specify the type of parameter in our callback, a `JSONVar`. Example:
 
 ```c
 WebSerial.on("browser-event", doSomething);
 
 // This is our function callback.
-// JSONVar is the type of parameter we expect and has to be explicitly specified.
+// JSONVar is the type of parameter and has to be explicitly specified.
 void doSomething(JSONVar parameter) {
     // do something
 }

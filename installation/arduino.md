@@ -1,14 +1,12 @@
----
-description: Setting your Arduino up for Simple Web Serial.
----
+# Installation - Arduino
 
-# Arduino
-
-## Installing the Arduino IDE
-
-If you haven't worked with an Arduino before, consider following the ["Getting Started" guide and install the Arduino Desktop IDE](https://www.arduino.cc/en/Guide). Getting your feet wet by looking at and tinkering with some of the examples provided by the Arduino team will go a long way to help you understand basics in Arduino programming.
+{% hint style="info" %}
+If you haven't worked with an Arduino before, consider following the ["Getting Started" guide](https://www.arduino.cc/en/Guide). Getting your feet wet by looking at and tinkering with some of the examples provided by the Arduino team will go a long way to help you understand basics in Arduino programming.
+{% endhint %}
 
 ## Installing the library
+
+As a first step, [install the Arduino Desktop IDE](https://www.arduino.cc/en/software) for your operating system if you haven't already.
 
 ### Via Arduino IDE Library Manager
 
@@ -19,10 +17,6 @@ The easiest way to get the library is to install it from the Arduino library man
 3. Enter "Simple Web Serial" in the search field
 4. _Simple Web Serial_ should be the first result. Click on it and hit the install button. 
 5. When prompted to install additional dependencies, select "Install All". That's it!
-
-{% hint style="info" %}
-This will also automatically install the Arduino\_JSON library, as it's a dependency.
-{% endhint %}
 
 ### Manually
 

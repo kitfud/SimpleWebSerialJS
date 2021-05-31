@@ -2,7 +2,7 @@
 description: How to set up the JavaScript part of the SimpleWebSerial library.
 ---
 
-# JavaScript
+# Installation - JavaScript
 
 ## Via &lt;script&gt; tag
 

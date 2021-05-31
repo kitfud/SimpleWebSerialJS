@@ -4,8 +4,8 @@
 
 ## Installation
 
-* [JavaScript](installation/javascript.md)
-* [Arduino](installation/arduino.md)
+* [Installation - JavaScript](installation/javascript.md)
+* [Installation - Arduino](installation/arduino.md)
 
 ## Usage
 
