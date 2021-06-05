@@ -15,7 +15,7 @@ In your set-up routine, initialize serial communication with your PC. Remember t
 SimpleWebSerial WebSerial;
 
 void setup() {
-    // 57600 is the default baud rate used in the JavaScript library.
+    // 57600 is the default connection speed used in the JavaScript library.
     Serial.begin(57600);
 }
 ```

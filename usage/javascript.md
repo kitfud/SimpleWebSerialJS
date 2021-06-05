@@ -48,7 +48,7 @@ When creating a SimpleSerial instance, it has a default set-up that works out of
 
 ```javascript
 const conn  = SimpleSerial.connect(); // Default, out-of-the-box behavior
-const conn2 = SimpleSerial.connect(9600); // Connection with a lower baud rate
+const conn2 = SimpleSerial.connect(9600); // Connect with a lower connection speed
 const conn3 = SimpleSerial.connect({ // Connection with a custom constructor object
     baudRate: 9600,
     requestAccessOnPageLoad: false,
@@ -60,7 +60,7 @@ const conn3 = SimpleSerial.connect({ // Connection with a custom constructor obj
 The constructor object can be used to customize the behavior of the connection, i.e. whether the library should ask for permission to use the serial port on page load, or if incoming serial data should be logged. A list of possible properties can be found below.
 
 **baudRate: number** _\(Default: 57600\)_  
-The baud rate \(think: speed of transmission\) used for the library. If you change this, make sure to also change it in your Arduino code! If you set it too high, the internal Arduino buffer might overflow.
+The baud rate \(think: connection speed\) used for the library. If you change this, make sure to also change it in your Arduino code! If you set it too high, the internal Arduino buffer might overflow.
 
 **requestAccessOnPageLoad: bool** _\(Default: true\)_  
 Defines whether the library should display a modal on page load, asking for permission to use the Web Serial API. If you want to handle authorization yourself, or at a later point in your app, set this to false.
