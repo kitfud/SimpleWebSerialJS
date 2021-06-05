@@ -11,7 +11,7 @@ Please make sure you've completed the [set-up for Arduino](../installation/ardui
 In your set-up routine, initialize serial communication with your PC. Remember to include the library:
 
 ```c
-#include <SimpleWebSerial.h>;
+#include <SimpleWebSerial.h>
 SimpleWebSerial WebSerial;
 
 void setup() {

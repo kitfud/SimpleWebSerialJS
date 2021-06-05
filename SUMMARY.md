@@ -11,6 +11,7 @@
 
 * [JavaScript Usage](usage/javascript.md)
 * [Arduino Usage](usage/arduino.md)
+* [Troubleshooting](usage/troubleshooting.md)
 
 ## Examples
 
@@ -28,6 +29,5 @@
 
 ---
 
-* [Troubleshooting](troubleshooting.md)
 * [Further reading](further-reading.md)
 

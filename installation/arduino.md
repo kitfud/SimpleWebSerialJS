@@ -34,7 +34,7 @@ If you need additional help installing the library, refer to the [official Ardui
 After downloading the library, include it at the top of your sketch and create an instance of it:
 
 ```c
-#include <SimpleWebSerial.h>;
+#include <SimpleWebSerial.h>
 
 // WebSerial can be any variable name you want.
 SimpleWebSerial WebSerial;
