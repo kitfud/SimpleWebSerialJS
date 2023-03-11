@@ -1,3 +1,7 @@
+//credit to: https://github.com/fmgrafikdesign/SimpleWebSerialJS/blob/main/examples/control-led-with-button/plain/plain.ino
+//Arduino script used to interface with AI model trigger on front end.
+
+
 const int ledPin = 2;
 void setup() {
   // initialize serial communications at 9600 bps:
